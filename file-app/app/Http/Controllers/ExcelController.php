@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Imports\ExcelImport;
 use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\ExcelExport;
 
 class ExcelController extends Controller
 {
@@ -23,5 +24,11 @@ class ExcelController extends Controller
 
         Excel::import(new ExcelImport, request()->file('file'));
         return back()->with('importMessage', 'インポートが完了しました。');
+    }
+
+    //ページエクスポート用
+    public function excelExport(){
+        $date = date('Y-m-d H:i:s');
+        return Excel::download(new ExcelExport,"$date.xlsx");
     }
 }

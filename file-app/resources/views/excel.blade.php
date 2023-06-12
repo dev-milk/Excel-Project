@@ -1,3 +1,4 @@
+{{-- インポート --}}
 <form action="{{ route('import') }}" method="POST" enctype="multipart/form-data">
 	@csrf
 	<div class="form-group">
@@ -11,4 +12,12 @@
         @endif
 	</div>
 </form>
-
+{{-- エクスポート --}}
+<a href="{{ route('export') }}">
+    <button class="btn btn-success">Excelエクスポート</button>
+</a>
+@if (session('exportMessage'))
+    <div class="alert alert-success text-center">
+        {{ session('exportMessage') }}
+    </div>
+@endif

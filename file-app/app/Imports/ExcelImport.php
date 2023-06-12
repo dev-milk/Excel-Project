@@ -20,7 +20,6 @@ class ExcelImport implements ToModel,WithHeadingRow
         return new ExcelData([
             'name'=>$row['名前'],
             'age'=>$row['年齢'],
-            // 'birthday'=>$row['生年月日']
             'birthday'=>Carbon::instance(Date::excelToDateTimeObject($row['生年月日']))
         ]);
     }
