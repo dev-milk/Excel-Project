@@ -5,6 +5,8 @@ namespace App\Imports;
 use App\Models\ExcelData;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
+use Illuminate\Support\Carbon;
+use PhpOffice\PhpSpreadsheet\Shared\Date;
 
 class ExcelImport implements ToModel,WithHeadingRow
 {
@@ -18,7 +20,8 @@ class ExcelImport implements ToModel,WithHeadingRow
         return new ExcelData([
             'name'=>$row['名前'],
             'age'=>$row['年齢'],
-            'birthday'=>$row['生年月日']
+            // 'birthday'=>$row['生年月日']
+            'birthday'=>Carbon::instance(Date::excelToDateTimeObject($row['生年月日']))
         ]);
     }
 }
