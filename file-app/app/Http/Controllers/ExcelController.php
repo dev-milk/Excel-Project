@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Imports\ExcelImport;
 use Maatwebsite\Excel\Facades\Excel;
-use App\Exports\ExcelExport;
+use App\Imports\ExcelExport;
 
 class ExcelController extends Controller
 {
