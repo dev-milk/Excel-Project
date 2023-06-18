@@ -1,7 +1,7 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ExcelController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,12 +18,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// ルーティング　書き方
-// use App\Http\Controllers\DashboardController;
-// Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
-//エクセル用のルーティング
-Route::get('/excel', [ExcelController::class, 'excel'])->name('excel');
-Route::get('/excelExport', [ExcelController::class, 'excelExport'])->name('export');
-Route::post('/excelImport', [ExcelController::class, 'excelImport'])->name('import');
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
 
+//エクセル用のルーティング しくみ再確認しで追加する！
+// Route::get('/excel', [ExcelController::class, 'excel'])->name('excel');
+// Route::get('/excelExport', [ExcelController::class, 'excelExport'])->name('export');
+// Route::post('/excelImport', [ExcelController::class, 'excelImport'])->name('import');
+
+require __DIR__.'/auth.php';
