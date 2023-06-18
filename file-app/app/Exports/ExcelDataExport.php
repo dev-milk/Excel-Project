@@ -12,6 +12,7 @@ class ExcelDataExport implements FromCollection
     */
     public function collection()
     {
-        return ExcelData::all();
+        // return ExcelData::all();
+        return ExcelData::all()->makeHidden(['id', 'created_at', 'updated_at']);
     }
 }
