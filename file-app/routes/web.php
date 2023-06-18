@@ -33,4 +33,7 @@ Route::middleware('auth')->group(function () {
 // Route::get('/excelExport', [ExcelController::class, 'excelExport'])->name('export');
 // Route::post('/excelImport', [ExcelController::class, 'excelImport'])->name('import');
 
+Route::get('/excelExport', [ExcelController::class, 'excelExport'])->middleware(['auth', 'verified'])->name('export');
+Route::post('/excelImport', [ExcelController::class, 'excelImport'])->middleware(['auth', 'verified'])->name('export');
+
 require __DIR__.'/auth.php';
