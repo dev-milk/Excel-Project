@@ -7,6 +7,15 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## About this Project
+<p>このリポジトリは以下の記事を参考にして作成したものです。</p>
+<ul>
+<li>環境構築　https://chigusa-web.com/blog/laravel-sail/</li>
+<li>Excelの入出力　https://www.its-corp.co.jp/laravel9-excel-import-export/</li>
+<li>ユーザ認証　https://reffect.co.jp/laravel/laravel-authentication-understand/</li>
+</ul>
+
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
@@ -51,7 +60,7 @@ We would like to extend our thanks to the following sponsors for funding Laravel
 
 ## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).aa
 
 ## Code of Conduct
 
@@ -64,7 +73,4 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-
-
-
 
